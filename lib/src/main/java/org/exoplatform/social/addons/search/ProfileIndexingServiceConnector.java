@@ -109,10 +109,10 @@ public class ProfileIndexingServiceConnector extends ElasticIndexingServiceConne
     StringBuilder sb = new StringBuilder();
     String identityId = identity.getId();
     for(Connection con : connections) {
-      if (identityId.equals(con.getSenderId())) {
-        sb.append(con.getReceiverId()).append(",");
+      if (identityId.equals(String.valueOf(con.getSender().getId()))) {
+        sb.append(con.getReceiver()).append(",");
       } else {
-        sb.append(con.getSenderId()).append(",");
+        sb.append(con.getSender()).append(",");
       }
     }
     //Remove the last ","

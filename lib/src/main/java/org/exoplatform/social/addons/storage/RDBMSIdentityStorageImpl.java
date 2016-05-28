@@ -450,7 +450,7 @@ public class RDBMSIdentityStorageImpl extends IdentityStorageImpl {
 
     // Delete all connection
     query = em.createNamedQuery("SocConnection.deleteConnectionByIdentity");
-    query.setParameter("identityId", String.valueOf(id));
+    query.setParameter("identityId", id);
     query.executeUpdate();
 
     if(OrganizationIdentityProvider.NAME.equals(provider)) {
@@ -872,7 +872,7 @@ public class RDBMSIdentityStorageImpl extends IdentityStorageImpl {
 
     // Delete all connection
     query = em.createNamedQuery("SocConnection.deleteConnectionByIdentity");
-    query.setParameter("identityId", String.valueOf(id));
+    query.setParameter("identityId", id);
     query.executeUpdate();
 
     if(OrganizationIdentityProvider.NAME.equals(provider)) {
